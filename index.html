@@ -3,124 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovative Product Showcase</title>
+    <title>850px Height Product Showcase</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            height: 850px;
+            overflow: hidden;
         }
         .container {
-            max-width: 100%;
-            overflow: hidden;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .product-carousel {
+            height: 100%;
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+            flex-direction: column;
+            background-color: #f0f0f0;
         }
-        .product-carousel::-webkit-scrollbar {
-            display: none;
+        .header {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        .product-grid {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr;
+            gap: 20px;
+            padding: 20px;
+            overflow-y: auto;
         }
         .product-card {
-            flex: 0 0 80%;
-            scroll-snap-align: center;
-            margin-right: 20px;
             background-color: white;
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .product-card:last-child {
-            margin-right: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
         }
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 60%;
             object-fit: cover;
-            transition: transform 0.3s ease;
         }
         .product-info {
-            padding: 20px;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        .product-card:hover .product-info {
-            transform: translateY(0);
-        }
-        .product-card:hover .product-image {
-            transform: scale(1.1);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
         }
         .product-name {
-            font-size: 1.2em;
             font-weight: bold;
+            font-size: 1em;
             margin-bottom: 5px;
+        }
+        .product-description {
+            font-size: 0.8em;
+            color: #666;
+            flex-grow: 1;
         }
         .product-price {
             font-size: 1.1em;
-            color: #ffd700;
-        }
-        .product-description {
-            font-size: 0.9em;
+            color: #e44d26;
             margin-top: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
-        .product-card:hover .product-description {
-            opacity: 1;
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="product-carousel">
+        <div class="header">
+            <h1>Our Latest Collection</h1>
+        </div>
+        <div class="product-grid">
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1610383547060-7b049ea45e9e?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Luxury Bedding Set" class="product-image">
+                <img src="https://unsplash.com/photos/lego-mini-figure-beside-blue-and-yellow-car-toy-lgRVGaBv1U0" alt="Luxury Bedding Set" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Luxury Bedding Set</div>
+                    <div class="product-description">Experience ultimate comfort with our premium cotton blend. Perfect for a restful night's sleep.</div>
                     <div class="product-price">$129.99</div>
-                    <div class="product-description">Experience ultimate comfort with our premium cotton blend.</div>
                 </div>
             </div>
             <div class="product-card">
                 <img src="https://images.unsplash.com/photo-1537119100544-ea57dccd7bd4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elegant Curtains" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Elegant Curtains</div>
+                    <div class="product-description">Transform your space with our light-filtering, stylish curtains. Available in various colors.</div>
                     <div class="product-price">$89.99</div>
-                    <div class="product-description">Transform your space with our light-filtering, stylish curtains.</div>
                 </div>
             </div>
             <div class="product-card">
-                <img src="/api/placeholder/400/400" alt="Cozy Throw Blanket" class="product-image">
+                <img src="/api/placeholder/300/300" alt="Cozy Throw Blanket" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Cozy Throw Blanket</div>
+                    <div class="product-description">Wrap yourself in warmth with our soft, durable throw. Perfect for chilly evenings.</div>
                     <div class="product-price">$49.99</div>
-                    <div class="product-description">Wrap yourself in warmth with our soft, durable throw.</div>
                 </div>
             </div>
             <div class="product-card">
-                <img src="/api/placeholder/400/400" alt="Designer Pillow Set" class="product-image">
+                <img src="/api/placeholder/300/300" alt="Designer Pillow Set" class="product-image">
                 <div class="product-info">
                     <div class="product-name">Designer Pillow Set</div>
+                    <div class="product-description">Add a pop of style with our coordinated pillow collection. Includes 2 large and 2 small pillows.</div>
                     <div class="product-price">$79.99</div>
-                    <div class="product-description">Add a pop of style with our coordinated pillow collection.</div>
                 </div>
             </div>
+            <div class="product-card">
+                <img src="/api/placeholder/300/300" alt="Plush Bath Towels" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Plush Bath Towels</div>
+                    <div class="product-description">Indulge in luxury after every bath with our super absorbent, soft towels. Set of 4.</div>
+                    <div class="product-price">$59.99</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://unsplash.com/photos/lego-mini-figure-beside-blue-and-yellow-car-toy-lgRVGaBv1U0" alt="Modern Table Runner" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Modern Table Runner</div>
+                    <div class="product-description">Elevate your dining experience with our sleek and stylish table runner. Machine washable.</div>
+                    <div class="product-price">$34.99</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Free shipping on orders over $100 | Use code NEWHOME for 10% off
         </div>
     </div>
 </body>
